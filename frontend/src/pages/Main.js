@@ -3,6 +3,8 @@ import './Main.css';
 import io from 'socket.io-client';
 import { Link } from 'react-router-dom';
 import api from '../services/api';
+
+// Images
 import logo from '../assets/logo.svg';
 import like from '../assets/like.svg';
 import dislike from '../assets/dislike.svg';
@@ -35,6 +37,7 @@ export default function Main({ match}) {
     })
   },[match.params.id])
 
+  // Function Like Dev
   async function handleLike(id) { 
     await api.post(`/devs/${id}/likes`, null, {
       headers: { user: match.params.id},
@@ -43,6 +46,7 @@ export default function Main({ match}) {
     setUsers(users.filter(user => user._id !== id))
   }
 
+  // Function Dislike Dev
   async function handleDislike(id) {
     await api.post(`/devs/${id}/dislikes`, null, {
       headers: { user: match.params.id},
