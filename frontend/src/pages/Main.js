@@ -63,7 +63,7 @@ export default function Main({ match}) {
               <img  src={user.avatar} alt=""/> 
               <footer>
                 <strong>{user.name}</strong>
-                <p>{user.name}</p>
+                <p>{user.bio}</p>
               </footer>
               <div className="buttons">
                 <button type="buttons" onClick={() => handleDislike(user._id)}>
